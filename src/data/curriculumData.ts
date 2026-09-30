@@ -3,6 +3,7 @@ import { getDetailedMusicLesson } from "./musicLessonDetails";
 import { getDetailedEnglishLesson } from "./englishLessonDetails";
 import { getDetailedLessonActivities } from "./detailedActivitiesGenerator";
 import { cleanLessonTitle, normalizeActivityName } from "../utils/lessonTitleHelper";
+import { cleanTeacherMaterials, cleanStudentMaterials } from "../utils/materialsHelper";
 import { WEEK_3_GRADE_5_PLANS } from "./week3SamplePlans";
 
 export interface SubjectCurriculum {
@@ -243,8 +244,8 @@ export const SAMPLE_LESSON_PLANS: Record<string, LessonPlan> = {
       }
     },
     materials: {
-      teacher: ["Sách giáo khoa, máy chiếu trình chiếu bài thơ, tranh ảnh minh họa hạt nảy mầm."],
-      student: ["Sách giáo khoa Tiếng Việt 5, vở ghi bài."]
+      teacher: ["Máy chiếu trình chiếu bài thơ, tranh ảnh minh họa hạt nảy mầm và thiên nhiên tươi đẹp."],
+      student: ["Phiếu học tập, tranh ảnh hoặc tư liệu sưu tầm về mầm cây."]
     },
     activities: [
       {
@@ -305,8 +306,8 @@ export const SAMPLE_LESSON_PLANS: Record<string, LessonPlan> = {
       }
     },
     materials: {
-      teacher: ["Phiếu bài tập nhóm, bảng phụ ghi các đoạn văn mẫu."],
-      student: ["Vở bài tập Tiếng Việt 5, bút."]
+      teacher: ["Phiếu bài tập nhóm, bảng phụ ghi các đoạn văn mẫu, bảng tương tác."],
+      student: ["Phiếu bài tập cá nhân, thẻ phân loại đại từ."]
     },
     activities: [
       {
@@ -365,8 +366,8 @@ export const SAMPLE_LESSON_PLANS: Record<string, LessonPlan> = {
       }
     },
     materials: {
-      teacher: ["Bộ đồ dùng dạy học Toán 5, phiếu học tập nhóm."],
-      student: ["Bộ thực hành Toán 5, bảng con, nháp."]
+      teacher: ["Bộ đồ dùng dạy học phân số Toán 5, phiếu học tập nhóm, thước kẻ bảng."],
+      student: ["Bộ thực hành phân số Toán 5, thước thẳng có vạch chia, phiếu học tập cá nhân."]
     },
     activities: [
       {
@@ -486,8 +487,8 @@ export const SAMPLE_LESSON_PLANS: Record<string, LessonPlan> = {
       }
     },
     materials: {
-      teacher: ["Hình ảnh Thomas Edison, hình ảnh chiếc bóng đèn sợi đốt đầu tiên."],
-      student: ["Sách giáo khoa Công nghệ 5."]
+      teacher: ["Hình ảnh Thomas Edison, hình ảnh chiếc bóng đèn sợi đốt đầu tiên, slide trình chiếu."],
+      student: ["Phiếu học tập tìm hiểu nhà sáng chế, tư liệu sưu tầm."]
     },
     activities: [
       {
@@ -678,6 +679,10 @@ export function generateFullWeekLessonPlans(
         schoolName: schoolInfo.schoolName,
         departmentName: schoolInfo.departmentName,
         branchName: schoolInfo.branchName,
+        materials: {
+          teacher: cleanTeacherMaterials(sp.materials?.teacher, item.subject, itemGrade, sp.lessonTitle),
+          student: cleanStudentMaterials(sp.materials?.student, item.subject, itemGrade, sp.lessonTitle),
+        },
         activities: (sp.activities || []).map((act) => ({
           ...act,
           name: normalizeActivityName(act.name),
@@ -799,8 +804,8 @@ export function generateFullWeekLessonPlans(
         integrations: parseKhdhIntegrations(item.integrationNotes)
       },
       materials: {
-        teacher: teacherMaterials,
-        student: studentMaterials
+        teacher: cleanTeacherMaterials(teacherMaterials, item.subject, itemGrade, finalLessonTitle),
+        student: cleanStudentMaterials(studentMaterials, item.subject, itemGrade, finalLessonTitle)
       },
       activities: [
         {

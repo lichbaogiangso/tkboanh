@@ -37,6 +37,7 @@ import {
   getAuthenticDeckSummary
 } from "../utils/classroomSlideDataHelper";
 import { cleanLessonTitle, normalizeActivityName, cleanSubjectName } from "../utils/lessonTitleHelper";
+import { cleanTeacherMaterials, cleanStudentMaterials } from "../utils/materialsHelper";
 
 interface LessonPlanViewProps {
   lessonPlans: LessonPlan[];
@@ -563,10 +564,16 @@ export const LessonPlanView: React.FC<LessonPlanViewProps> = ({
                         {/* II. Đồ dùng dạy học */}
                         <div className="text-xs bg-stone-50 p-2.5 border border-stone-300 flex flex-col sm:flex-row gap-2">
                           <div className="sm:w-1/2">
-                            <strong className="text-black">{isEn ? "Teacher's Aids: " : "Đồ dùng GV: "}</strong> <span className="text-stone-700">{plan.materials?.teacher?.join("; ")}</span>
+                            <strong className="text-black">{isEn ? "Teacher's Aids: " : "Đồ dùng GV: "}</strong>{" "}
+                            <span className="text-stone-700">
+                              {cleanTeacherMaterials(plan.materials?.teacher, plan.subject, plan.grade, plan.lessonTitle).join("; ")}
+                            </span>
                           </div>
                           <div className="sm:w-1/2">
-                            <strong className="text-black">{isEn ? "Students' Aids: " : "Đồ dùng HS: "}</strong> <span className="text-stone-700">{plan.materials?.student?.join("; ")}</span>
+                            <strong className="text-black">{isEn ? "Students' Aids: " : "Đồ dùng HS: "}</strong>{" "}
+                            <span className="text-stone-700">
+                              {cleanStudentMaterials(plan.materials?.student, plan.subject, plan.grade, plan.lessonTitle).join("; ")}
+                            </span>
                           </div>
                         </div>
 
@@ -970,10 +977,12 @@ export const LessonPlanView: React.FC<LessonPlanViewProps> = ({
                 </h3>
                 <div className="space-y-1 pl-2">
                   <p className="text-stone-800">
-                    <strong className="text-black">{isEn ? "- Teacher: " : "- Giáo viên: "}</strong> {activePlan.materials.teacher.join("; ")}
+                    <strong className="text-black">{isEn ? "- Teacher: " : "- Giáo viên: "}</strong>{" "}
+                    {cleanTeacherMaterials(activePlan.materials?.teacher, activePlan.subject, activePlan.grade, activePlan.lessonTitle).join("; ")}
                   </p>
                   <p className="text-stone-800">
-                    <strong className="text-black">{isEn ? "- Students: " : "- Học sinh: "}</strong> {activePlan.materials.student.join("; ")}
+                    <strong className="text-black">{isEn ? "- Students: " : "- Học sinh: "}</strong>{" "}
+                    {cleanStudentMaterials(activePlan.materials?.student, activePlan.subject, activePlan.grade, activePlan.lessonTitle).join("; ")}
                   </p>
                 </div>
               </div>

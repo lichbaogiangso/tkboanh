@@ -17,6 +17,7 @@ import { saveAs } from "file-saver";
 import { LessonPlan, ScheduleItem, SchoolInfo, MasterTimetable } from "../types";
 import { DAYS_OF_WEEK, DEFAULT_TEACHERS, isSlotMatchingTeacherOrSubject, getWeekDates, getSpecialistTeacherShortName } from "../data/defaultTimetables";
 import { cleanLessonTitle, normalizeActivityName, cleanSubjectName } from "./lessonTitleHelper";
+import { cleanTeacherMaterials, cleanStudentMaterials } from "./materialsHelper";
 
 /**
  * Universal robust file download helper for Web & sandboxed iFrame environments
@@ -1643,10 +1644,13 @@ export async function exportLessonPlansDocx(
     }
 
     // Section II: Materials
+    const tMaterials = cleanTeacherMaterials(plan.materials?.teacher, plan.subject, plan.grade, plan.lessonTitle);
+    const sMaterials = cleanStudentMaterials(plan.materials?.student, plan.subject, plan.grade, plan.lessonTitle);
+
     docChildren.push(
       new Paragraph({
         spacing: { before: 40, after: 20 },
-        children: [new TextRun({ text: "II. ĐỒ DÙNG DẠY HỌC", bold: true, color: "0F172A", font, size: baseSize })],
+        children: [new TextRun({ text: "II. ĐỒ DÙNG DẠY HỌC VÀ HỌC LIỆU", bold: true, color: "0F172A", font, size: baseSize })],
       })
     );
     docChildren.push(
@@ -1654,7 +1658,7 @@ export async function exportLessonPlansDocx(
         spacing: { after: 20 },
         children: [
           new TextRun({ text: "- Giáo viên: ", bold: true, font, size: baseSize }),
-          new TextRun({ text: plan.materials.teacher.join("; "), font, size: baseSize }),
+          new TextRun({ text: tMaterials.join("; "), font, size: baseSize }),
         ],
       })
     );
@@ -1663,7 +1667,7 @@ export async function exportLessonPlansDocx(
         spacing: { after: 30 },
         children: [
           new TextRun({ text: "- Học sinh: ", bold: true, font, size: baseSize }),
-          new TextRun({ text: plan.materials.student.join("; "), font, size: baseSize }),
+          new TextRun({ text: sMaterials.join("; "), font, size: baseSize }),
         ],
       })
     );
@@ -2150,10 +2154,13 @@ export async function exportCombinedAllInOneDocx(
     }
 
     // II. Đồ dùng
+    const tMaterialsWeekly = cleanTeacherMaterials(plan.materials?.teacher, plan.subject, plan.grade, plan.lessonTitle);
+    const sMaterialsWeekly = cleanStudentMaterials(plan.materials?.student, plan.subject, plan.grade, plan.lessonTitle);
+
     docChildren.push(
       new Paragraph({
         spacing: { before: 40, after: 20 },
-        children: [new TextRun({ text: "II. ĐỒ DÙNG DẠY HỌC", bold: true, font, size: baseSize })],
+        children: [new TextRun({ text: "II. ĐỒ DÙNG DẠY HỌC VÀ HỌC LIỆU", bold: true, font, size: baseSize })],
       })
     );
     docChildren.push(
@@ -2161,7 +2168,7 @@ export async function exportCombinedAllInOneDocx(
         spacing: { after: 20 },
         children: [
           new TextRun({ text: "- Giáo viên: ", bold: true, font, size: baseSize }),
-          new TextRun({ text: plan.materials.teacher.join("; "), font, size: baseSize }),
+          new TextRun({ text: tMaterialsWeekly.join("; "), font, size: baseSize }),
         ],
       })
     );
@@ -2170,7 +2177,7 @@ export async function exportCombinedAllInOneDocx(
         spacing: { after: 30 },
         children: [
           new TextRun({ text: "- Học sinh: ", bold: true, font, size: baseSize }),
-          new TextRun({ text: plan.materials.student.join("; "), font, size: baseSize }),
+          new TextRun({ text: sMaterialsWeekly.join("; "), font, size: baseSize }),
         ],
       })
     );
@@ -2678,10 +2685,13 @@ export async function exportWeeklyKHBDWithLBGFirstPageDocx(
       }
 
       // II. Đồ dùng dạy học
+      const tMaterialsCombined = cleanTeacherMaterials(plan.materials?.teacher, plan.subject, plan.grade, plan.lessonTitle);
+      const sMaterialsCombined = cleanStudentMaterials(plan.materials?.student, plan.subject, plan.grade, plan.lessonTitle);
+
       docChildren.push(
         new Paragraph({
           spacing: { before: 40, after: 20 },
-          children: [new TextRun({ text: "II. ĐỒ DÙNG DẠY HỌC", bold: true, font, size: baseSize })],
+          children: [new TextRun({ text: "II. ĐỒ DÙNG DẠY HỌC VÀ HỌC LIỆU", bold: true, font, size: baseSize })],
         })
       );
       docChildren.push(
@@ -2689,7 +2699,7 @@ export async function exportWeeklyKHBDWithLBGFirstPageDocx(
           spacing: { after: 20 },
           children: [
             new TextRun({ text: "- Giáo viên: ", bold: true, font, size: baseSize }),
-            new TextRun({ text: plan.materials.teacher.join("; "), font, size: baseSize }),
+            new TextRun({ text: tMaterialsCombined.join("; "), font, size: baseSize }),
           ],
         })
       );
@@ -2698,7 +2708,7 @@ export async function exportWeeklyKHBDWithLBGFirstPageDocx(
           spacing: { after: 30 },
           children: [
             new TextRun({ text: "- Học sinh: ", bold: true, font, size: baseSize }),
-            new TextRun({ text: plan.materials.student.join("; "), font, size: baseSize }),
+            new TextRun({ text: sMaterialsCombined.join("; "), font, size: baseSize }),
           ],
         })
       );

@@ -92,8 +92,8 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
       integrations: {}
     },
     materials: {
-      teacher: ["Sách giáo khoa, máy chiếu trình chiếu bài thơ, tranh ảnh minh họa hạt nảy mầm."],
-      student: ["Sách giáo khoa Tiếng Việt 5, vở ghi bài."]
+      teacher: ["Máy chiếu trình chiếu bài thơ, tranh ảnh minh họa hạt nảy mầm."],
+      student: ["Phiếu học tập, tranh ảnh hoặc tư liệu sưu tầm về mầm cây."]
     },
     activities: [
       {
@@ -152,7 +152,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Phiếu bài tập nhóm, bảng phụ ghi các đoạn văn mẫu."],
-      student: ["Vở bài tập Tiếng Việt 5, bút."]
+      student: ["Phiếu bài tập cá nhân, thẻ phân loại đại từ."]
     },
     activities: [
       {
@@ -209,7 +209,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bộ đồ dùng dạy học Toán 5, phiếu học tập nhóm."],
-      student: ["Bộ thực hành Toán 5, bảng con, nháp."]
+      student: ["Bộ thực hành phân số Toán 5, thước thẳng có vạch chia, phiếu học tập cá nhân."]
     },
     activities: [
       {
@@ -291,7 +291,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Slide bài giảng, video tư liệu về Bà mẹ Việt Nam anh hùng, tranh ảnh di tích lịch sử."],
-      student: ["SGK Đạo đức 5, vở ghi bài."]
+      student: ["Thẻ bày tỏ thái độ (hoa xanh/đỏ hoặc mặt cười/mặt mếu), phiếu bài tập xử lý tình huống."]
     },
     activities: [
       {
@@ -348,7 +348,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Kế hoạch bài dạy, bài giảng điện tử (PPTX), bảng phụ ghi sẵn đoạn văn mẫu."],
-      student: ["Sách giáo khoa Tiếng Việt 5, vở bài tập Tiếng Việt, vở ghi bài."]
+      student: ["Sơ đồ tư duy dàn ý mẫu, phiếu học tập rèn kỹ năng viết đoạn văn."]
     },
     activities: [
       {
@@ -405,7 +405,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bài giảng điện tử tương tác, bộ đồ dùng dạy học Toán 5, bảng phụ."],
-      student: ["SGK Toán 5, vở bài tập Toán, bảng con, nháp."]
+      student: ["Thước thẳng có vạch chia, bộ thẻ phân số và phiếu học tập cá nhân."]
     },
     activities: [
       {
@@ -490,7 +490,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bản đồ Địa lí tự nhiên Việt Nam, slide bài giảng, phiếu học tập."],
-      student: ["SGK Lịch sử và Địa lí 5, vở ghi, thước kẻ."]
+      student: ["Lược đồ trống, bản đồ học tập cá nhân, bút màu tô địa danh."]
     },
     activities: [
       {
@@ -547,7 +547,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Hình ảnh ruộng bậc thang, video về xói mòn đất, bảng nhóm."],
-      student: ["Giấy A3, bút dạ màu."]
+      student: ["Bảng nhóm, giấy vẽ A3 và dụng cụ thực nghiệm."]
     },
     activities: [
       {
@@ -603,8 +603,8 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
       integrations: {}
     },
     materials: {
-      teacher: ["Sách giáo khoa, máy chiếu, tranh minh họa bài đọc."],
-      student: ["SGK Tiếng Việt 5, vở ghi bài."]
+      teacher: ["Máy chiếu, video clip và tranh minh họa bài đọc."],
+      student: ["Phiếu học tập luyện đọc, tư liệu sưu tầm theo bài học."]
     },
     activities: [
       {
@@ -661,7 +661,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bảng phụ ghi đoạn luyện đọc diễn cảm, slide bài giảng."],
-      student: ["SGK Tiếng Việt 5, vở ghi."]
+      student: ["Phiếu bài tập luyện từ và câu, giấy nhớ ghi từ đồng nghĩa."]
     },
     activities: [
       {
@@ -718,7 +718,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Mô hình hình tròn/mảnh bìa trực quan, slide tương tác."],
-      student: ["Bộ đồ dùng học Toán 5, bảng con, nháp."]
+      student: ["Bộ mô hình hình học trực quan, thước thẳng có vạch chia, phiếu bài tập."]
     },
     activities: [
       {
@@ -801,7 +801,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bản báo cáo công việc mẫu, slide bài giảng."],
-      student: ["SGK Tiếng Việt 5, vở ghi bài."]
+      student: ["Mẫu bản báo cáo công việc, phiếu học tập rèn luyện kỹ năng viết."]
     },
     activities: [
       {
@@ -860,7 +860,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Slide tương tác quy tắc chuyển đổi hỗn số, bảng phụ."],
-      student: ["SGK Toán 5, bảng con, vở bài tập."]
+      student: ["Thước thẳng có vạch chia, bộ thẻ hỗn số và phân số, phiếu học tập."]
     },
     activities: [
       {
@@ -945,7 +945,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bản đồ phân bố đất và rừng Việt Nam, tranh ảnh rừng rậm nhiệt đới, rừng ngập mặn."],
-      student: ["SGK Lịch sử và Địa lí 5, vở ghi."]
+      student: ["Lược đồ phân bố rừng và đất đai Việt Nam, bút màu ghi chú."]
     },
     activities: [
       {
@@ -1004,7 +1004,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Cốc thủy tinh, thìa, nước, muối, đường, cát, phiếu thí nghiệm."],
-      student: ["Vở thực hành Khoa học 5."]
+      student: ["Cốc thủy tinh nhỏ, mẫu vật làm thí nghiệm hòa tan, phiếu ghi chép thực nghiệm."]
     },
     activities: [
       {
@@ -1061,7 +1061,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Bảng mẫu chữ viết đẹp, phiếu bài tập tăng cường."],
-      student: ["Vở rèn chữ, bút mực."]
+      student: ["Phiếu luyện viết chữ đẹp, bút mài nét thanh nét đậm."]
     },
     activities: [
       {
@@ -1118,7 +1118,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Các cuốn sách câu chuyện thể thao, mẫu Phiếu đọc sách."],
-      student: ["Sách truyện mang theo, Phiếu đọc sách."]
+      student: ["Sách truyện chủ đề thể thao/đời sống, Phiếu ghi chép đọc sách."]
     },
     activities: [
       {
@@ -1175,7 +1175,7 @@ export const WEEK_3_GRADE_5_PLANS: Record<string, LessonPlan> = {
     },
     materials: {
       teacher: ["Thước kẻ, ê-ke to trên bảng lớp, hình vẽ ôn tập."],
-      student: ["SGK Toán 5, thước kẻ, ê-ke, vở bài tập."]
+      student: ["Thước thẳng có vạch chia, ê-ke đo góc, compa và phiếu bài tập ôn luyện."]
     },
     activities: [
       {
